@@ -59,6 +59,19 @@ public class Employee_1 {
           return taxPayments;
       }
 
+    public static void main(String[] args) {
+        Employee_1 employee1 = new Employee_1("Matt LeBlanc", 100000, 2);
+        Employee_1 employee2 = new Employee_1("Liza Kudrow", 70000, 1);
+        Employee_1 employee3 = new Employee_1("Jennifer Aniston", 50000, 0);
+        Employee_1[] employees = new Employee_1[] {employee1, employee2, employee3};
+
+        TaxPayment[] taxPayments = employeesTaxForm(employees);
+        for (TaxPayment taxPayment : taxPayments) {
+            System.out.println("Employee: "+taxPayment.getEmpoyeeName()+
+                    ".\tIncomeTax: "+taxPayment.getIncomTax());
+        }
+
+    }
 
 }
 
