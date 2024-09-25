@@ -41,25 +41,20 @@ public class Employee_1 {
   public static TaxPayment[] employeesTaxForm(Employee_1[] employees) {
       TaxPayment[] taxPayments = new TaxPayment[employees.length];
 
-
-      for (Employee_1 employee : employees) {
-          for (TaxPayment taxPayment : taxPayments) {
-              String name = employee.getName();
-              int taxRate = 0;
-              if (employee.getSalary() > 10000) {
+      for (int i=0; i<employees.length; i++) {
+              //String name = employee.getName();
+              int taxRate;
+              if (employees[i].getSalary() > 10000) {
                   taxRate = 23;
-              } else if (employee.getSalary() < 5000) {
+              } else if (employees[i].getSalary() < 5000) {
                   taxRate = 18;
               } else {
                   taxRate = 13;
               }
 
-              double incomTax = (employee.getSalary() * taxRate) / 100 - employee.numberOfChildren * 1000;
-              TaxPayment taxPaymentFinal = new TaxPayment(employee.getName(), incomTax);
-              taxPayment = taxPaymentFinal;
-
-
-          }
+              double incomeTax = (employees[i].getSalary() * taxRate) / 100 - employees[i].numberOfChildren * 1000;
+              TaxPayment currentEmployeeTaxPayment = new TaxPayment(employees[i].getName(), incomeTax);
+              taxPayments[i] = currentEmployeeTaxPayment;
       }
           return taxPayments;
       }
