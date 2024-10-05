@@ -4,19 +4,13 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        WirelessHeadphones wirelessHeadphone1 = new WirelessHeadphones("iPhone", "wireless");
-        WiredHeadphones wiredHeadphone1 = new WiredHeadphones("iPhone", "wired");
-        WirelessHeadphones wirelessHeadphone2 = new WirelessHeadphones("Samsung", "wireless");
-        WiredHeadphones wiredHeadphone2 = new WiredHeadphones("Samsung", "wired");
-        WirelessHeadphones wirelessHeadphone3 = new WirelessHeadphones("Sony", "wireless");
-        WiredHeadphones wiredHeadphone3 = new WiredHeadphones("Sony", "wired");
-
-        Phone phone = new Phone(Arrays.asList(wiredHeadphone1, wiredHeadphone2, wiredHeadphone3),
-                Arrays.asList(wirelessHeadphone1, wirelessHeadphone2, wirelessHeadphone3));
-
-        phone.connect(wirelessHeadphone3);
-        phone.disconnect(wirelessHeadphone3);
-        phone.connect(wiredHeadphone2);
-        phone.disconnect(wiredHeadphone2);
+        Phone.WiredHeadphones wiredHeadphones1 = new Phone.WiredHeadphones("Sony", "wired");
+        Phone.WiredHeadphones wiredHeadphones2 = new Phone.WiredHeadphones("Sumsung", "wired");
+        Phone.WirelessHeadphones wirelessHeadphones1 = new Phone.WirelessHeadphones("iPhone", "wireless");
+        Phone.WirelessHeadphones wirelessHeadphones2 = new Phone.WirelessHeadphones("Bose", "wireless");
+        Phone.connect(wiredHeadphones1);
+        Phone.disconnect(wiredHeadphones1);
+        Phone.connect(wirelessHeadphones2);
+        Phone.disconnect(wirelessHeadphones2);
     }
 }
