@@ -7,18 +7,13 @@ public class Phone {
         public WiredHeadphones(String manufacturer, String model) {
             super(manufacturer, model);
         }
-        public void print() {
-            System.out.println("Wired Headphones");
-        }
     }
 
     static class WirelessHeadphones extends Headphones{
         public WirelessHeadphones(String manufacturer, String model) {
             super(manufacturer, model);
         }
-        public void print() {
-            System.out.println("Wireless Headphones");
-        }
+
     }
     /*
     public Phone(List<WiredHeadphones> wiredHeadphones, List<WirelessHeadphones> wirelessHeadphones) {
@@ -37,7 +32,6 @@ public class Phone {
         String type = headphone.getManufacturer();
         String model = headphone.getModel();
         System.out.println(type + " " + model + " headphones connected.");
-
     }
 
     public static void disconnect(Headphones headphone) {
